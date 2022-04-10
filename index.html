@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <nav style="display: none;">
+    <ul>
+      <li><a href="#">Collections </a></li>
+      <li><a href="#">Men         </a></li>
+      <li><a href="#">Women       </a></li>
+      <li><a href="#">About       </a></li>
+      <li><a href="#">Contact     </a></li>
+    </ul>
+  </nav>
+
+  <header class="global-header">
+    <div class="header-content">
+      <!-- Menu icon -->
+      <button type="button">
+        <img src="./img/icon-menu.svg" alt="Open menu">
+      </button>
+
+      <!-- Logo -->
+      <img class="logo" src="./img/logo.svg" alt="Sneakers">
+
+      <div class="right-buttons">
+        <!-- Cart icon -->
+        <button type="button">
+          <img src="./img/icon-cart.svg" alt="My cart">
+        </button>
+
+        <!-- Profile icon -->
+        <button type="button">
+          <img src="./img/image-avatar.png" alt="My profile">
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Product photos -->
+    <div class="carousel">
+      <div class="images">
+        <img src="./img/image-product-1.jpg" alt="Product photo">
+
+        <!-- Previous button -->
+        <button class="previous">
+          <img src="./img/icon-previous.svg" alt="Previous image">
+        </button>
+
+        <!-- Previous button -->
+        <button class="next">
+          <img src="./img/icon-next.svg" alt="Next image">
+        </button>
+      </div>
+
+      <div class="images-list only-on-desktop">
+
+      </div>
+    </div>
+
+    <div class="product-info-container">
+      <!-- Product info -->
+      <h3 class="company-name">Sneaker Company</h3>
+
+      <h1 class="product-name">Fall Limited Edition Sneakers</h1>
+
+      <p class="product-description">
+        These low-profile sneakers are your perfect casual wear companion. Featuring a 
+        durable rubber outer sole, they'll withstand everything the weather can offer.
+      </p>
+
+      <!-- Price -->
+      <div class="prices">
+        <span class="main-price">     $125.00 </span>
+        <span class="discount">       50%     </span>
+        <span class="original-price"> $250.00 </span>
+      </div>
+
+      <!-- Quantity -->
+      <div class="quantity">
+        <button class="sub" type="button">
+          <img src="./img/icon-minus.svg" alt="Remove">
+        </button>
+
+        <span class="quantity-value">0</span>
+
+        <button class="add" type="button">
+          <img src="./img/icon-plus.svg" alt="Add">
+        </button>
+      </div>
+
+      <button class="add-to-cart" type="button">
+        <img src="./img/icon-cart.svg" alt="Add to cart">
+        Add to cart
+      </button>
+    </div>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Caio Corrêa Chaves</a>.
+  </div>
+</body>
+</html>
