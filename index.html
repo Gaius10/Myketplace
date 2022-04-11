@@ -12,6 +12,7 @@
 
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/dynamic.css">
 
   <title>Frontend Mentor | E-commerce product page</title>
 
@@ -23,25 +24,42 @@
 </head>
 <body>
 
-  <nav style="display: none;">
-    <ul>
-      <li><a href="#">Collections </a></li>
-      <li><a href="#">Men         </a></li>
-      <li><a href="#">Women       </a></li>
-      <li><a href="#">About       </a></li>
-      <li><a href="#">Contact     </a></li>
-    </ul>
+  <nav class="nav-mobile">
+    <div class="nav-content">
+      <button type="button">
+        <img src="./img/icon-close.svg" alt="Close menu">
+      </button>
+      <ul>
+        <li><a href="#">Collections </a></li>
+        <li><a href="#">Men         </a></li>
+        <li><a href="#">Women       </a></li>
+        <li><a href="#">About       </a></li>
+        <li><a href="#">Contact     </a></li>
+      </ul>
+    </div>
+    <div class="nav-black-part"></div>
   </nav>
 
   <header class="global-header">
     <div class="header-content">
       <!-- Menu icon -->
-      <button type="button">
+      <button type="button" class="hide-on-desktop">
         <img src="./img/icon-menu.svg" alt="Open menu">
       </button>
 
       <!-- Logo -->
       <img class="logo" src="./img/logo.svg" alt="Sneakers">
+
+      <!-- Desktop navbar -->
+      <nav class="only-on-desktop">
+        <ul>
+          <li><a href="#">Collections </a></li>
+          <li><a href="#">Men         </a></li>
+          <li><a href="#">Women       </a></li>
+          <li><a href="#">About       </a></li>
+          <li><a href="#">Contact     </a></li>
+        </ul>
+      </nav>
 
       <div class="right-buttons">
         <!-- Cart icon -->
@@ -53,6 +71,35 @@
         <button type="button">
           <img src="./img/image-avatar.png" alt="My profile">
         </button>
+
+        <div class="cart">
+          <div class="cart-header">
+            <h3>Cart</h3>
+          </div>
+          <ul>
+            <!-- <li class="empty-cart">
+              <p>Your cart is empty</p>
+            </li> -->
+            <li class="cart-item">
+              <img src="./img/image-product-1-thumbnail.jpg" alt="Product photo 1">
+              <div class="product-info">
+                <span class="name">Autumn Limited Edition Plus aaa a asdf asdfasdf </span>
+                <span class="price">
+                  <span class="unit">$125.00 x 3</span>
+                  <span class="total">$375.00</span>
+                </span>
+              </div>
+              <button type="button">
+                <img src="./img/icon-delete.svg" alt="Delete icon">
+              </button>
+            </li>
+            <li class="checkout-button">
+              <button type="button">
+                Checkout
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </header>
@@ -75,7 +122,10 @@
       </div>
 
       <div class="images-list only-on-desktop">
-
+        <img src="./img/image-product-1-thumbnail.jpg" alt="Product photo 1">
+        <img src="./img/image-product-2-thumbnail.jpg" alt="Product photo 2">
+        <img src="./img/image-product-3-thumbnail.jpg" alt="Product photo 3">
+        <img src="./img/image-product-4-thumbnail.jpg" alt="Product photo 4">
       </div>
     </div>
 
@@ -97,28 +147,31 @@
         <span class="original-price"> $250.00 </span>
       </div>
 
-      <!-- Quantity -->
-      <div class="quantity">
-        <button class="sub" type="button">
-          <img src="./img/icon-minus.svg" alt="Remove">
-        </button>
+      <div class="actions-container">
+        <!-- Quantity -->
+        <div class="quantity">
+          <button class="sub" type="button">
+            <img src="./img/icon-minus.svg" alt="Remove">
+          </button>
 
-        <span class="quantity-value">0</span>
+          <span class="quantity-value">0</span>
 
-        <button class="add" type="button">
-          <img src="./img/icon-plus.svg" alt="Add">
+          <button class="add" type="button">
+            <img src="./img/icon-plus.svg" alt="Add">
+          </button>
+        </div>
+
+        <!-- Add to cart button -->
+        <button class="add-to-cart" type="button">
+          <img src="./img/icon-cart.svg" alt="Add to cart">
+          Add to cart
         </button>
       </div>
-
-      <button class="add-to-cart" type="button">
-        <img src="./img/icon-cart.svg" alt="Add to cart">
-        Add to cart
-      </button>
     </div>
   </main>
-  <div class="attribution">
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Caio Corrêa Chaves</a>.
-  </div>
+  </div> -->
 </body>
 </html>
