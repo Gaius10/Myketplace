@@ -1,5 +1,5 @@
-
 document.addEventListener('DOMContentLoaded', () => {
+
   const cart = {
     items: {},
     add(id, name, thumb, price, quantity) {
@@ -11,12 +11,20 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     remove(id) {
       delete this.items[id];
+    }
+  }
+
+  const renderer = {
+    clear() {
+      const listElement = document.querySelector("#cart ul");
+      while (listElement.firstChild)
+        listElement.removeChild(listElement.firstChild);
     },
-    render() {
+    render(items) {
       const listElement = document.querySelector("#cart ul");
 
       const fragment = document.createDocumentFragment();
-      if (!Object.keys(this.items).length) {
+      if (!Object.keys(items).length) {
         // Add only an "Empty cart" element
         const li = document.createElement('li');
         li.classList.add('empty-cart');
@@ -24,8 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
         fragment.appendChild(li);
       } else {
         // Render items
-        Object.keys(this.items).forEach(key => {
-          const item = this.items[key];
+        Object.keys(items).forEach(key => {
+          const item = items[key];
 
           const li = document.createElement('li');
           li.classList.add('cart-item');
@@ -73,9 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
           const button = document.createElement('button');
           button.type = 'button';
           button.onclick = () => {
-            this.remove(key);
-            this.clear();
-            this.render();
+            cart.remove(key);
+            renderer.clear();
+            renderer.render(cart.items);
           }
 
           const buttonImage = document.createElement('img');
@@ -103,13 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       listElement.appendChild(fragment);
-    },
-    clear() {
-      const listElement = document.querySelector("#cart ul");
-      while (listElement.firstChild)
-        listElement.removeChild(listElement.firstChild);
     }
-  };
+  }
 
   const addButton = document.querySelector('.add-to-cart');
   addButton.onclick = () => {
@@ -127,12 +130,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     cart.add(productId, productName, productThumb, productPrice, productQuantity);
-    cart.clear();
-    cart.render();
-
-    console.log(cart.items);
+    renderer.clear();
+    renderer.render(cart.items);
   }
 
-  cart.clear();
-  cart.render();
+  renderer.clear();
+  renderer.render(cart.items);
 });
