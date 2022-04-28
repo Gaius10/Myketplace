@@ -23,7 +23,6 @@
   </style>
 </head>
 <body>
-
   <nav class="nav-mobile">
     <div class="nav-content">
       <button type="button">
@@ -63,16 +62,16 @@
 
       <div class="right-buttons">
         <!-- Cart icon -->
-        <button type="button">
+        <button type="button" class="toggler" data-target="cart">
           <img src="./img/icon-cart.svg" alt="My cart">
         </button>
 
         <!-- Profile icon -->
-        <button type="button">
+        <button type="button" class="toggler" data-target="cart">
           <img src="./img/image-avatar.png" alt="My profile">
         </button>
 
-        <div class="cart">
+        <div class="cart hidden" id="cart">
           <div class="cart-header">
             <h3>Cart</h3>
           </div>
@@ -173,5 +172,8 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Caio Corrêa Chaves</a>.
   </div> -->
+  <script src="./js/details.js"></script>
+  <script src="./js/cart.js"></script>
+  <script src="./js/carousel.js"></script>
 </body>
 </html>
